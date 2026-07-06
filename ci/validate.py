@@ -34,7 +34,7 @@ FUNCTIONAL_DIRS = ["skills", "skills-codex", "agents", "commands"]
 DESC_CAP = 1024  # Claude Code rejects skill/agent descriptions longer than this at load.
 # Skills that exist ONLY in the Claude tree (no Codex variant) — e.g. babysit
 # needs the native /loop, which Codex lacks. Exempt from skills↔skills-codex parity.
-CLAUDE_ONLY = {"babysit", "ship"}
+CLAUDE_ONLY = {"babysit", "ship", "herdr"}
 
 failures = []
 checks = 0

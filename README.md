@@ -41,6 +41,8 @@ Or hand the whole thing off:
 
 Plus **`/babysit`** (Claude Code only) — watch a running service and keep it alive unattended: every few minutes it checks logs and health, and on trouble it fixes, deploys, and re-checks — beeping for you only when it's truly stuck. *e.g. point it at your prod app → it self-heals and pings you only on a real fire.*
 
+And **`/herdr`** *(Claude Code · needs the [herdr](https://herdr.dev) multiplexer, runs only inside a herdr pane)* — drive the whole terminal from the CLI: split panes, spawn sibling agents (more Claude Code sessions, servers, tests), read another pane's output, and block until a command is ready or another agent is done. Adapted from herdr's upstream skill. *e.g. start a dev server in a sibling pane, wait for "ready", then hand a second agent a task.*
+
 ## Install
 
 Native plugin install — paste the line for your runtime, then restart the session:
@@ -57,6 +59,6 @@ No-marketplace fallback: `git clone` the repo, then symlink `skills/*` into `~/.
 
 ## Prerequisites
 
-`git`, `bash`, `jq`, `python3`. `/extract-links` probes for `yt-dlp` (YouTube) and `pandoc` (HTML, optional) at runtime. `/blueprint`'s cross-model review is optional — it calls the *other* CLI (Codex when running in Claude Code, Claude when running in Codex) plus an optional `OPENROUTER_API_KEY` third reviewer; without them it falls back to single-model validation.
+`git`, `bash`, `jq`, `python3`. `/extract-links` probes for `yt-dlp` (YouTube) and `pandoc` (HTML, optional) at runtime. `/blueprint`'s cross-model review is optional — it calls the *other* CLI (Codex when running in Claude Code, Claude when running in Codex) plus an optional `OPENROUTER_API_KEY` third reviewer; without them it falls back to single-model validation. `/herdr` needs the [`herdr`](https://herdr.dev) binary and only activates inside a herdr pane (`HERDR_ENV=1`).
 
 Release history: see [CHANGELOG.md](CHANGELOG.md).

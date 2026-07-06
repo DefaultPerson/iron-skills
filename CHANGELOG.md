@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.12.0 — 2026-07-06
+
+New `/herdr` skill (Claude Code only) — control the [herdr](https://herdr.dev)
+terminal multiplexer from inside a herdr-managed pane: split panes, spawn sibling
+agents (more Claude Code sessions, servers, tests), read another pane's output, and
+block on `wait output` / `wait agent-status`. Adapted from herdr's upstream
+`SKILL.md` for Claude Code — Claude-Code frontmatter (`name` + triggers +
+`allowed-tools: Bash`), a Bash-tool usage note, and a headless `claude -p` spawn
+recipe; commands verified against `herdr 0.7.1`. No Codex variant (added to the
+validator's Claude-only allowlist).
+
 ## 0.11.0 — 2026-06-21
 
 `/blueprint` plan layout settled: everything lives in **tasks.md** — `## Needs your
